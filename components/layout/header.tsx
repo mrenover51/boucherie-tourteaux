@@ -1,59 +1,143 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import {
+  Menu,
+  MessageCircle,
+  Moon,
+  Phone,
+  ShoppingBag,
+  Sun,
+  X,
+} from "lucide-react";
 import { Logo } from "./logo";
 import { Container } from "@/components/ui/container";
 import { navigation, siteConfig } from "@/lib/site-config";
-
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dark, setDark] = useState(false);
   const pathname = usePathname();
-
+  useEffect(() => {
+    const onScroll = () => setScrolled(scrollY > 26);
+    onScroll();
+    addEventListener("scroll", onScroll, { passive: true });
+    return () => removeEventListener("scroll", onScroll);
+  }, []);
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
-
   useEffect(() => {
-    const marker = document.createElement("span");
-    marker.className = "pointer-events-none absolute top-0 h-px w-px";
-    marker.setAttribute("aria-hidden", "true");
-    document.body.prepend(marker);
-    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
-    observer.observe(marker);
-    return () => { observer.disconnect(); marker.remove(); };
-  }, []);
-
-  const dark = scrolled || open;
-  const overDarkHero = pathname === "/" || pathname === "/boucherie" || pathname === "/produits";
-  const lightText = dark || overDarkHero;
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 border-b transition-[background-color,border-color] duration-500 ${dark ? "border-white/10 bg-[#120d0e]/92 text-white supports-[backdrop-filter:blur(1px)]:backdrop-blur-md" : `border-transparent bg-transparent ${lightText ? "text-white" : "text-bordeaux"}`}`}>
-      <Container className={`grid grid-cols-[1fr_auto_1fr] items-center transition-[height] duration-500 ${scrolled ? "h-16 lg:h-20" : "h-20 lg:h-24"}`}>
-        <button type="button" className="relative z-50 flex min-h-11 w-fit items-center gap-3 text-[.65rem] font-semibold uppercase tracking-[.18em] lg:hidden" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen((value) => !value)}>
-          <span className="grid gap-1.5" aria-hidden><span className={`h-px w-5 bg-current transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} /><span className={`h-px w-5 bg-current transition-transform ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} /></span>
-          {open ? "Fermer" : "Menu"}
-        </button>
-        <nav className="hidden lg:block" aria-label="Navigation principale"><ul className="flex gap-8">{navigation.slice(0, 3).map((item) => <NavLink key={item.href} {...item} active={pathname === item.href} />)}</ul></nav>
-        <span className={`origin-center transition-transform duration-500 ${scrolled ? "scale-90" : "scale-100"}`}><Logo light={lightText} /></span>
-        <nav className="hidden justify-self-end lg:block" aria-label="Navigation secondaire"><ul className="flex gap-8">{navigation.slice(3).map((item) => <NavLink key={item.href} {...item} active={pathname === item.href} />)}</ul></nav>
-        <a href={siteConfig.phoneHref} className="relative z-50 flex min-h-11 items-center justify-self-end text-xs font-semibold lg:hidden">Appeler</a>
-      </Container>
-      {open && (
-        <div id="mobile-menu" className="mobile-menu fixed inset-0 z-40 min-h-dvh bg-bordeaux text-white lg:hidden">
-          <Container className="flex min-h-dvh flex-col justify-between pt-32 pb-10">
-            <nav aria-label="Navigation mobile"><ul>{navigation.map((item) => <li className="mobile-menu-item" key={item.href}><Link href={item.href} onClick={() => setOpen(false)} className="block border-b border-white/15 py-3 font-serif text-4xl">{item.label}</Link></li>)}</ul></nav>
-            <p className="text-sm text-white/70">{siteConfig.address.street} · {siteConfig.address.postalCode} {siteConfig.address.city}</p>
-          </Container>
-        </div>
-      )}
-    </header>
+    <>
+      <div className="fixed inset-x-0 top-0 z-[60] flex h-6 items-center justify-center overflow-hidden bg-bordeaux px-3 text-center text-[.45rem] font-bold tracking-[.105em] text-white sm:text-[.54rem]">
+        VIANDE FRANÇAISE 100% SÉLECTIONNÉE{" "}
+        <span className="mx-2 text-gold">•</span> ARTISAN BOUCHER À AVIZE DEPUIS
+        PLUSIEURS GÉNÉRATIONS
+      </div>
+      <header
+        className={`fixed inset-x-0 top-6 z-50 border-b transition-all duration-500 ${scrolled || open ? "border-white/10 bg-[#160d0e]/94 text-white shadow-[0_8px_30px_rgba(0,0,0,.18)] backdrop-blur-lg" : "border-white/10 bg-gradient-to-b from-black/30 to-transparent text-white"}`}
+      >
+        <Container
+          className={`flex items-center justify-between gap-5 transition-[height] ${scrolled ? "h-[76px]" : "h-[96px]"}`}
+        >
+          <Logo light />
+          <nav className="hidden xl:block" aria-label="Navigation principale">
+            <ul className="flex items-center gap-7 2xl:gap-9">
+              {navigation.map((i) => (
+                <li key={i.href}>
+                  <Link
+                    href={i.href}
+                    aria-current={pathname === i.href ? "page" : undefined}
+                    className={`nav-link ${pathname === i.href ? "active" : ""}`}
+                  >
+                    {i.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="hidden items-center gap-2.5 xl:flex">
+            <a
+              href="https://wa.me/33326517371"
+              aria-label="WhatsApp"
+              className="header-icon text-emerald-400"
+            >
+              <MessageCircle className="size-4" />
+            </a>
+            <a
+              href={siteConfig.phoneHref}
+              aria-label="Téléphoner"
+              className="header-icon"
+            >
+              <Phone className="size-4" />
+            </a>
+            <Link
+              href="/contact"
+              className="flex h-12 items-center gap-2 bg-bordeaux px-5 text-[13px] font-bold tracking-[.1em] transition-colors hover:bg-[#6a1420]"
+            >
+              <ShoppingBag className="size-4 text-gold" /> COMMANDER
+            </Link>
+            <button
+              onClick={() => setDark((v) => !v)}
+              className="header-icon"
+              aria-label="Changer le thème"
+            >
+              {dark ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            </button>
+          </div>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            className="grid size-11 place-items-center xl:hidden"
+            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+        </Container>
+        {open && (
+          <div
+            id="mobile-nav"
+            className="mobile-menu fixed inset-0 top-[120px] bg-[#160d0e] text-white xl:hidden"
+          >
+            <Container className="flex h-full flex-col justify-between py-8">
+              <nav>
+                <ul>
+                  {navigation.map((i) => (
+                    <li key={i.href}>
+                      <Link
+                        onClick={() => setOpen(false)}
+                        href={i.href}
+                        className="block border-b border-white/10 py-3 font-serif text-[clamp(2.1rem,8vw,3.6rem)]"
+                      >
+                        {i.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <div className="pb-10">
+                <a
+                  href={siteConfig.phoneHref}
+                  className="font-serif text-2xl text-gold"
+                >
+                  {siteConfig.phone}
+                </a>
+                <p className="mt-3 text-sm text-white/55">
+                  33 rue Pasteur · 51190 Avize
+                </p>
+              </div>
+            </Container>
+          </div>
+        )}
+      </header>
+    </>
   );
-}
-
-function NavLink({ label, href, active }: { label: string; href: string; active: boolean }) {
-  return <li><Link href={href} aria-current={active ? "page" : undefined} className={`relative py-3 text-[.65rem] font-semibold uppercase tracking-[.16em] transition-colors hover:text-gold ${active ? "text-gold" : "text-current/75"}`}>{label}</Link></li>;
 }
