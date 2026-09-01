@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   Menu,
-  MessageCircle,
   Moon,
   Phone,
   ShoppingBag,
@@ -26,10 +25,24 @@ export function Header() {
     return () => removeEventListener("scroll", onScroll);
   }, []);
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const bodyOverflow = document.body.style.overflow;
+    const htmlOverflow = document.documentElement.style.overflow;
+    if (open) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    }
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = bodyOverflow;
+      document.documentElement.style.overflow = htmlOverflow;
     };
+  }, [open]);
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
   }, [open]);
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
@@ -37,12 +50,11 @@ export function Header() {
   return (
     <>
       <div className="fixed inset-x-0 top-0 z-[60] flex h-6 items-center justify-center overflow-hidden bg-bordeaux px-3 text-center text-[.45rem] font-bold tracking-[.105em] text-white sm:text-[.54rem]">
-        VIANDE FRANÇAISE 100% SÉLECTIONNÉE{" "}
-        <span className="mx-2 text-gold">•</span> ARTISAN BOUCHER À AVIZE DEPUIS
-        PLUSIEURS GÉNÉRATIONS
+        BOUCHERIE TOURTEAUX <span className="mx-2 text-gold">•</span> 33 RUE
+        PASTEUR <span className="mx-2 text-gold">•</span> 51190 AVIZE
       </div>
       <header
-        className={`fixed inset-x-0 top-6 z-50 border-b transition-all duration-500 ${scrolled || open ? "border-white/10 bg-[#160d0e]/94 text-white shadow-[0_8px_30px_rgba(0,0,0,.18)] backdrop-blur-lg" : "border-white/10 bg-gradient-to-b from-black/30 to-transparent text-white"}`}
+        className={`fixed inset-x-0 top-6 border-b transition-all duration-500 ${open ? "z-[80]" : "z-50"} ${scrolled || open ? "border-white/10 bg-[#160d0e]/98 text-white shadow-[0_8px_30px_rgba(0,0,0,.28)] xl:backdrop-blur-lg" : "border-white/10 bg-gradient-to-b from-black/30 to-transparent text-white"}`}
       >
         <Container
           className={`flex items-center justify-between gap-5 transition-[height] ${scrolled ? "h-[76px]" : "h-[96px]"}`}
@@ -65,13 +77,6 @@ export function Header() {
           </nav>
           <div className="hidden items-center gap-2.5 xl:flex">
             <a
-              href="https://wa.me/33326517371"
-              aria-label="WhatsApp"
-              className="header-icon text-emerald-400"
-            >
-              <MessageCircle className="size-4" />
-            </a>
-            <a
               href={siteConfig.phoneHref}
               aria-label="Téléphoner"
               className="header-icon"
@@ -82,7 +87,7 @@ export function Header() {
               href="/contact"
               className="flex h-12 items-center gap-2 bg-bordeaux px-5 text-[13px] font-bold tracking-[.1em] transition-colors hover:bg-[#6a1420]"
             >
-              <ShoppingBag className="size-4 text-gold" /> COMMANDER
+              <ShoppingBag className="size-4 text-gold" /> CONTACT
             </Link>
             <button
               onClick={() => setDark((v) => !v)}
@@ -105,17 +110,17 @@ export function Header() {
         {open && (
           <div
             id="mobile-nav"
-            className="mobile-menu fixed inset-0 top-[120px] bg-[#160d0e] text-white xl:hidden"
+            className={`mobile-menu-backdrop fixed inset-x-0 bottom-0 text-white xl:hidden ${scrolled ? "top-[100px]" : "top-[120px]"}`}
           >
-            <Container className="flex h-full flex-col justify-between py-8">
-              <nav>
+            <Container className="mobile-menu-panel flex h-full flex-col justify-between overflow-y-auto px-5 pt-5 pb-28 sm:px-8 sm:pt-7 sm:pb-32">
+              <nav aria-label="Navigation mobile">
                 <ul>
                   {navigation.map((i) => (
-                    <li key={i.href}>
+                    <li key={i.href} className="mobile-menu-item">
                       <Link
                         onClick={() => setOpen(false)}
                         href={i.href}
-                        className="block border-b border-white/10 py-3 font-serif text-[clamp(2.1rem,8vw,3.6rem)]"
+                        className="block border-b border-white/10 py-2.5 font-serif text-[clamp(1.8rem,7.5vw,3.35rem)] leading-[1.05] transition-colors hover:text-gold sm:py-3"
                       >
                         {i.label}
                       </Link>
@@ -123,14 +128,14 @@ export function Header() {
                   ))}
                 </ul>
               </nav>
-              <div className="pb-10">
+              <div className="mt-8 border-t border-white/10 pt-6">
                 <a
                   href={siteConfig.phoneHref}
-                  className="font-serif text-2xl text-gold"
+                  className="inline-flex min-h-11 items-center font-serif text-2xl text-gold"
                 >
                   {siteConfig.phone}
                 </a>
-                <p className="mt-3 text-sm text-white/55">
+                <p className="mt-2 text-sm text-white/60">
                   33 rue Pasteur · 51190 Avize
                 </p>
               </div>

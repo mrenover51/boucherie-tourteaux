@@ -28,14 +28,14 @@ export function ContactExperience({ faq, email, phone, phoneHref, hours }: { faq
       <section className="flex min-h-[62svh] items-end border-b border-bordeaux/10 bg-background py-16 sm:py-24">
         <Container>
           <motion.p initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex items-center gap-3 text-[.65rem] font-semibold uppercase tracking-[.24em] text-bordeaux"><span className="h-px w-8 bg-current" /> Venir à la boutique</motion.p>
-          <div className="grid gap-10 lg:grid-cols-[1.3fr_.7fr] lg:items-end"><h1 className="overflow-hidden pb-[.12em] font-serif text-[clamp(4.5rem,11vw,10rem)] leading-[.75] tracking-[-.055em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease }} className="block">Contact.</motion.span></h1><p className="max-w-md border-l border-gold pl-6 text-sm leading-7 text-foreground/55">Une question, une commande ou une information sur les disponibilités ? Contactez directement la maison.</p></div>
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_.7fr] lg:items-end"><h1 className="overflow-hidden pb-[.12em] font-serif text-[clamp(3.7rem,9vw,8rem)] leading-[.82] tracking-[-.055em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease }} className="block">Contact et horaires à Avize.</motion.span></h1><p className="max-w-md border-l border-gold pl-6 text-sm leading-7 text-foreground/55">Une question ou une information sur les disponibilités ? Contactez directement la maison.</p></div>
         </Container>
       </section>
 
       <section className="bg-background py-20 sm:py-28 lg:py-36">
         <Container className="grid gap-4 lg:grid-cols-3">
           <InfoCard icon={MapPin} label="Adresse"><address className="not-italic">33 rue Pasteur<br />51190 Avize</address><a href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[.15em] text-bordeaux">Itinéraire <ArrowUpRight className="size-4" /></a></InfoCard>
-          <InfoCard icon={Phone} label="Téléphone"><a href={phoneHref} className="font-serif text-3xl text-bordeaux">{phone}</a><p className="mt-4 text-sm text-foreground/50">Commandes et renseignements</p></InfoCard>
+          <InfoCard icon={Phone} label="Téléphone"><a href={phoneHref} className="font-serif text-3xl text-bordeaux">{phone}</a><p className="mt-4 text-sm text-foreground/50">Disponibilités et renseignements</p></InfoCard>
           <InfoCard icon={Clock3} label="Horaires"><dl className="space-y-3">{hours.map((item) => <div key={item.days} className="flex justify-between gap-4 text-sm"><dt className="text-foreground/50">{item.days}</dt><dd className="text-right">{item.hours}</dd></div>)}</dl></InfoCard>
         </Container>
       </section>

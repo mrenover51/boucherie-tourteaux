@@ -15,7 +15,7 @@ const images = [
   { src: "/images/produit-volaille.webp", width: 900, height: 1125, alt: "Volailles préparées présentées sur pierre claire", caption: "Volaille", kind: "portrait" },
   { src: "/images/boucherie-savoir-faire.webp", width: 1120, height: 1400, alt: "Geste d’affûtage dans un atelier", caption: "Le geste", kind: "portrait" },
   { src: "/images/produit-traiteur.webp", width: 900, height: 1125, alt: "Préparations traiteur dans des plats sombres", caption: "Traiteur", kind: "portrait" },
-  { src: "/images/boucherie-hero.webp", width: 1672, height: 941, alt: "Préparation artisanale d’une pièce de viande", caption: "La préparation", kind: "wide" },
+  { src: "/images/boucherie-hero.webp", width: 1672, height: 941, alt: "Préparation d’une pièce de viande en boucherie", caption: "La préparation", kind: "wide" },
   { src: "/images/produit-agneau.webp", width: 900, height: 1125, alt: "Carré d’agneau sur papier boucher", caption: "Agneau", kind: "portrait" },
 ] as const;
 
@@ -51,7 +51,7 @@ export function GalleryExperience() {
         <Container>
           <motion.p initial={reduceMotion ? false : { opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} className="mb-8 flex items-center gap-3 text-[.65rem] font-semibold uppercase tracking-[.24em] text-bordeaux"><span className="h-px w-8 bg-current" /> En images</motion.p>
           <div className="grid gap-10 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
-            <h1 className="overflow-hidden pb-[.12em] font-serif text-[clamp(4.5rem,11vw,10rem)] leading-[.75] tracking-[-.055em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease }} className="block">Galerie.</motion.span></h1>
+            <h1 className="overflow-hidden pb-[.12em] font-serif text-[clamp(4rem,10vw,9rem)] leading-[.78] tracking-[-.055em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease }} className="block">Galerie de la boucherie à Avize.</motion.span></h1>
             <motion.p initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .5 }} className="max-w-md border-l border-gold pl-6 text-sm leading-7 text-foreground/55">Une collection d’images éditoriales consacrée aux matières, aux gestes et aux différentes catégories de la maison.</motion.p>
           </div>
         </Container>

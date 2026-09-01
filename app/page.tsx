@@ -3,8 +3,9 @@ import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = createMetadata(
-  "Accueil",
-  "Boucherie Tourteaux, boucherie, charcuterie et traiteur au 33 rue Pasteur à Avize.",
+  "Boucherie Tourteaux à Avize, au cœur de la Côte des Blancs",
+  "Boucherie Tourteaux à Avize : boucherie, service traiteur, livraison et vente à emporter au cœur de la Côte des Blancs, près d’Épernay.",
+  "/",
 );
 
 export default function HomePage() {

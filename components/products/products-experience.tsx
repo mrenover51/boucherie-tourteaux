@@ -65,7 +65,7 @@ export function ProductsExperience({ phone, phoneHref }: { phone: string; phoneH
           <motion.p initial={reduceMotion ? false : { opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="mb-8 flex items-center gap-4 text-[.65rem] font-semibold uppercase tracking-[.26em] text-gold"><span className="h-px w-10 bg-current" /> La sélection</motion.p>
           <h1 className="max-w-6xl font-serif text-[clamp(4.5rem,11vw,10rem)] leading-[.74] tracking-[-.055em]">
             <span className="block overflow-hidden pb-[.12em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, ease }} className="block">Nos</motion.span></span>
-            <span className="block overflow-hidden pb-[.12em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.08, ease }} className="ml-[12vw] block italic text-[#e7d3ae]">produits.</motion.span></span>
+            <span className="block overflow-hidden pb-[.12em]"><motion.span initial={reduceMotion ? false : { y: "110%" }} animate={{ y: 0 }} transition={{ duration: 1, delay: 0.08, ease }} className="ml-[12vw] block italic text-[#e7d3ae]">produits à Avize.</motion.span></span>
           </h1>
           <motion.div initial={reduceMotion ? false : { opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.7 }} className="mt-10 flex items-end justify-between gap-8 border-t border-white/20 pt-6">
             <p className="max-w-lg text-sm leading-7 text-white/65 sm:text-base">Découvrez les grandes catégories proposées par la Boucherie Tourteaux. La disponibilité des références varie en boutique.</p>

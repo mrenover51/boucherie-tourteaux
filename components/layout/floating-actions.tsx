@@ -1,14 +1,13 @@
 "use client";
-import { MapPin, MessageCircle, Phone, ShoppingBag } from "lucide-react";
+import { MapPin, Phone, ShoppingBag } from "lucide-react";
 const actions = [
   { label: "Appeler", icon: Phone, href: "phone" },
-  { label: "WhatsApp", icon: MessageCircle, href: "https://wa.me/33326517371" },
   {
     label: "Itinéraire",
     icon: MapPin,
     href: "https://www.google.com/maps/dir/?api=1&destination=33+rue+Pasteur+51190+Avize",
   },
-  { label: "Commander", icon: ShoppingBag, href: "/contact" },
+  { label: "Contact", icon: ShoppingBag, href: "/contact" },
 ];
 export function FloatingActions({ phoneHref }: { phoneHref: string }) {
   return (
@@ -36,7 +35,7 @@ export function FloatingActions({ phoneHref }: { phoneHref: string }) {
         aria-label="Actions rapides mobiles"
         className="fixed inset-x-3 bottom-3 z-40 flex justify-around rounded-xl border border-white/10 bg-[#111]/92 px-2 py-2 text-white shadow-2xl backdrop-blur-md xl:hidden"
       >
-        {actions.slice(0, 3).map(({ label, icon: Icon, href }) => (
+        {actions.map(({ label, icon: Icon, href }) => (
           <a
             key={label}
             href={href === "phone" ? phoneHref : href}

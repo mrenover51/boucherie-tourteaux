@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { BoucherieExperience } from "@/components/boucherie/boucherie-experience";
 import { siteConfig } from "@/lib/site-config";
+import { breadcrumbSchema, businessId, safeJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "La Boucherie",
-  description: "Découvrez la Boucherie Tourteaux, son métier et son adresse au cœur d’Avize, dans la Marne.",
+  title: "Le métier et la boutique à Avize",
+  description: "Découvrez le métier de la Boucherie Tourteaux et son commerce situé au 33 rue Pasteur à Avize, dans la Marne.",
   alternates: { canonical: "/boucherie" },
   openGraph: {
     title: "La Boucherie Tourteaux à Avize",
@@ -13,21 +14,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
   },
+  twitter: { card: "summary_large_image", title: "La Boucherie Tourteaux à Avize", description: "Découvrez la boutique et le métier au 33 rue Pasteur à Avize." },
 };
 
 export default function BoucheriePage() {
-  const schema = {
+  const schema = [{
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "La Boucherie Tourteaux",
     url: `${siteConfig.url}/boucherie`,
-    about: { "@type": "Butcher", name: siteConfig.name, address: `${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city}` },
-  };
+    about: { "@id": businessId },
+  }, breadcrumbSchema([{ name: "Accueil", href: "/" }, { name: "La Boucherie", href: "/boucherie" }])];
 
   return (
     <>
       <BoucherieExperience phone={siteConfig.phone} phoneHref={siteConfig.phoneHref} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }} />
     </>
   );
 }

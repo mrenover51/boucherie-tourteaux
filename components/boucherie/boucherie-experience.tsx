@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
 const timeline = [
-  { date: "2022", title: "Création de la société", text: "La société Boucherie Tourteaux est enregistrée à Avize." },
+  { date: "Adresse", title: "33 rue Pasteur", text: "La Boucherie Tourteaux accueille ses clients à Avize, dans la Marne." },
   { date: "Aujourd’hui", title: "Une adresse au cœur d’Avize", text: "La boutique accueille ses clients du mardi au dimanche midi, au 33 rue Pasteur." },
   { date: "Demain", title: "La suite de l’histoire", text: "Les dates, portraits et étapes de la maison seront complétés après validation par l’équipe." },
 ] as const;
@@ -25,7 +25,7 @@ export function BoucherieExperience({ phone, phoneHref }: { phone: string; phone
   return (
     <div>
       <section data-hero className="relative isolate flex min-h-[calc(100svh-5rem)] items-end overflow-hidden bg-[#1a1113] text-white lg:min-h-[calc(100svh-6rem)]">
-        <Image data-hero-image src="/images/boucherie-hero.webp" alt="Geste artisanal de préparation d’une pièce de viande" fill priority sizes="100vw" className="hero-image object-cover object-[62%_center]" />
+        <Image data-hero-image src="/images/boucherie-hero.webp" alt="Geste de préparation d’une pièce de viande en boucherie" fill priority sizes="100vw" className="hero-image object-cover object-[62%_center]" />
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-transparent" />
         <Container className="relative z-10 pb-12 pt-32 sm:pb-16 lg:pb-20">
@@ -43,7 +43,7 @@ export function BoucherieExperience({ phone, phoneHref }: { phone: string; phone
 
       <section id="histoire" className="bg-background py-24 sm:py-32 lg:py-44">
         <Container className="grid gap-16 lg:grid-cols-[.75fr_1.25fr] lg:gap-24">
-          <div data-reveal><Eyebrow>Notre histoire</Eyebrow><p className="mt-8 max-w-xs text-sm leading-7 text-foreground/55">Une maison jeune dont l’histoire détaillée sera prochainement racontée avec les mots et les archives de l’équipe.</p></div>
+          <div data-reveal><Eyebrow>Notre histoire</Eyebrow><p className="mt-8 max-w-xs text-sm leading-7 text-foreground/55">L’histoire détaillée de la boutique sera complétée uniquement avec les informations validées par l’équipe.</p></div>
           <div>
             <h2 data-reveal className="font-serif text-[clamp(3.2rem,6.3vw,6.6rem)] leading-[.88] tracking-[-.045em]">Une maison inscrite dans <em className="font-normal text-bordeaux">la vie d’Avize.</em></h2>
             <div data-timeline className="relative mt-20 pl-10 sm:pl-16">
@@ -95,15 +95,15 @@ export function BoucherieExperience({ phone, phoneHref }: { phone: string; phone
           <div data-reveal><Eyebrow>Notre engagement qualité</Eyebrow><h2 className="mt-7 font-serif text-5xl leading-[.92] tracking-[-.035em] sm:text-7xl">La confiance passe par des informations précises.</h2><p className="mt-8 max-w-xl leading-8 text-foreground/60">Origines, races, labels et noms des partenaires seront détaillés ici lorsqu’ils auront été confirmés par la Boucherie Tourteaux.</p>
             <div className="mt-12 grid gap-4 sm:grid-cols-2"><QualityCard icon={ShieldCheck} title="Traçabilité" text="Informations disponibles et vérifiables en boutique." /><QualityCard icon={BadgeCheck} title="Transparence" text="Aucune origine ni certification ne sera publiée sans validation." /></div>
           </div>
-          <div data-image-reveal className="photo-glow relative aspect-[4/5] overflow-hidden"><Image src="/images/boucherie-elevage.webp" alt="Bovins dans une prairie française au lever du jour" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover transition-transform duration-1000 hover:scale-[1.025]" /></div>
+          <div data-image-reveal className="photo-glow relative aspect-[4/5] overflow-hidden"><Image src="/images/boucherie-elevage.webp" alt="Bovins dans une prairie au lever du jour" fill sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover transition-transform duration-1000 hover:scale-[1.025]" /></div>
         </Container>
       </section>
 
       <section className="bg-white py-24 sm:py-32 lg:py-40">
         <Container>
           <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            <div data-reveal><p className="font-serif text-2xl italic text-gold">01</p><h2 className="mt-6 font-serif text-5xl sm:text-6xl">Viandes françaises</h2><p className="mt-7 max-w-lg leading-8 text-foreground/60">Cette rubrique est prête à accueillir la liste exacte des viandes françaises proposées, avec leurs origines et labels après confirmation.</p></div>
-            <div data-reveal className="lg:border-l lg:border-bordeaux/15 lg:pl-24"><p className="font-serif text-2xl italic text-gold">02</p><h2 className="mt-6 font-serif text-5xl sm:text-6xl">Sélection des éleveurs</h2><p className="mt-7 max-w-lg leading-8 text-foreground/60">Les partenaires et critères de sélection seront présentés avec des informations fournies et validées par la maison.</p></div>
+            <div data-reveal><p className="font-serif text-2xl italic text-gold">01</p><h2 className="mt-6 font-serif text-5xl sm:text-6xl">Choisir en boutique</h2><p className="mt-7 max-w-lg leading-8 text-foreground/60">Les catégories présentées sur le site donnent un aperçu de l’offre. Les pièces, origines et disponibilités précises sont communiquées directement en boutique.</p></div>
+            <div data-reveal className="lg:border-l lg:border-bordeaux/15 lg:pl-24"><p className="font-serif text-2xl italic text-gold">02</p><h2 className="mt-6 font-serif text-5xl sm:text-6xl">Préparer votre demande</h2><p className="mt-7 max-w-lg leading-8 text-foreground/60">Pour une quantité, une découpe ou un besoin traiteur, contactez l’équipe avant votre venue afin de vérifier ce qui peut être proposé.</p></div>
           </div>
         </Container>
       </section>
@@ -115,7 +115,7 @@ export function BoucherieExperience({ phone, phoneHref }: { phone: string; phone
 
       <section className="bg-gold py-24 sm:py-32">
         <Container data-reveal className="grid gap-10 lg:grid-cols-[1.2fr_.8fr] lg:items-end">
-          <div><p className="text-[.65rem] font-semibold uppercase tracking-[.22em] text-bordeaux">Une question, une commande ?</p><h2 className="mt-6 max-w-3xl font-serif text-5xl leading-[.9] tracking-[-.04em] text-bordeaux sm:text-7xl">Passez nous voir à Avize.</h2></div>
+          <div><p className="text-[.65rem] font-semibold uppercase tracking-[.22em] text-bordeaux">Une question ?</p><h2 className="mt-6 max-w-3xl font-serif text-5xl leading-[.9] tracking-[-.04em] text-bordeaux sm:text-7xl">Passez nous voir à Avize.</h2></div>
           <div className="flex flex-wrap gap-3 lg:justify-end"><Button href="/contact" className="group bg-bordeaux">Nous trouver <MapPin className="size-4 transition-transform group-hover:-translate-y-1" /></Button><Button href={phoneHref} variant="outline" className="group border-bordeaux text-bordeaux">Appeler <Phone className="size-4 transition-transform group-hover:rotate-12" /></Button><p className="basis-full text-right font-serif text-2xl text-bordeaux">{phone}</p></div>
         </Container>
       </section>

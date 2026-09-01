@@ -3,92 +3,79 @@ import Link from "next/link";
 import {
   ArrowDown,
   ArrowRight,
-  BadgeCheck,
+  Beef,
   ChefHat,
   Phone,
-  Scissors,
-  ShieldCheck,
+  ShoppingBag,
   Truck,
-  UsersRound,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { FloatingActions } from "@/components/layout/floating-actions";
 import { ProductCarousel } from "@/components/sections/product-carousel";
 import { Gallery } from "@/components/sections/gallery";
-import { Testimonials } from "@/components/sections/testimonials";
 
 const products = [
   {
     title: "Bœuf",
-    text: "Des races françaises choisies pour leur persillé et leur tendreté.",
+    text: "Des pièces de bœuf à découvrir selon la sélection disponible en boutique.",
     image: "/images/produit-boeuf.webp",
   },
   {
     title: "Veau",
-    text: "Une chair fine, claire et fondante issue d’élevages sélectionnés.",
+    text: "La catégorie veau est présentée selon les disponibilités en boutique.",
     image: "/images/produit-veau.webp",
   },
   {
     title: "Agneau",
-    text: "Des pièces délicates préparées avec précision dans notre atelier.",
+    text: "La catégorie agneau est présentée selon les disponibilités en boutique.",
     image: "/images/produit-agneau.webp",
   },
   {
     title: "Porc",
-    text: "Le goût généreux d’une viande française soigneusement travaillée.",
+    text: "Des pièces de porc à choisir directement auprès de la boucherie.",
     image: "/images/produit-porc.webp",
   },
   {
     title: "Volaille",
-    text: "Volailles fermières entières ou découpées selon vos envies.",
+    text: "La catégorie volaille est présentée selon les disponibilités en boutique.",
     image: "/images/produit-volaille.webp",
   },
   {
-    title: "Fromages",
-    text: "Une sélection affinée pour accompagner vos tables champenoises.",
+    title: "Charcuterie",
+    text: "Une catégorie de charcuterie à découvrir directement en boutique.",
     image: "/images/produit-charcuterie.webp",
   },
   {
-    title: "Produits régionaux",
-    text: "Les saveurs de notre terroir et les meilleures maisons locales.",
+    title: "Préparations",
+    text: "Les préparations disponibles sont à vérifier auprès de la boutique.",
     image: "/images/produit-preparations-maison.webp",
   },
   {
     title: "Traiteur",
-    text: "Des recettes maison pensées pour vos repas et vos réceptions.",
+    text: "Un service traiteur dont les possibilités sont confirmées sur demande.",
     image: "/images/produit-traiteur.webp",
   },
 ];
 const commitments = [
   {
-    icon: BadgeCheck,
-    title: "Viande française",
-    text: "Des origines choisies et une traçabilité sans compromis.",
-  },
-  {
-    icon: Truck,
-    title: "Circuit court",
-    text: "Des partenaires proches et des relations de confiance.",
-  },
-  {
-    icon: Scissors,
-    title: "Découpe artisanale",
-    text: "Chaque pièce est préparée à la main, à la demande.",
-  },
-  {
-    icon: UsersRound,
-    title: "Conseils personnalisés",
-    text: "La cuisson, la quantité et le morceau juste pour vous.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Hygiène irréprochable",
-    text: "Une exigence quotidienne dans toute la maison.",
+    icon: Beef,
+    title: "Boucherie",
+    text: "L’activité principale de la boutique située à Avize.",
   },
   {
     icon: ChefHat,
-    title: "Traiteur sur mesure",
-    text: "Des préparations gourmandes pour toutes les occasions.",
+    title: "Service traiteur",
+    text: "Contactez la boutique pour connaître les possibilités proposées.",
+  },
+  {
+    icon: Truck,
+    title: "Livraison",
+    text: "Un service proposé selon des modalités à confirmer avec la boutique.",
+  },
+  {
+    icon: ShoppingBag,
+    title: "Vente à emporter",
+    text: "Un service proposé par la Boucherie Tourteaux à Avize.",
   },
 ];
 
@@ -108,7 +95,7 @@ export function HomeExperience({
       >
         <Image
           src="/images/hero-boucherie-tourteaux.webp"
-          alt="Pièce de bœuf sélectionnée par un artisan boucher"
+          alt="Pièce de bœuf présentée dans l’univers de la boucherie"
           fill
           priority
           sizes="100vw"
@@ -122,23 +109,22 @@ export function HomeExperience({
             data-hero-fade
             className="mb-7 flex items-center gap-4 text-[.61rem] font-bold uppercase tracking-[.27em] text-gold sm:text-[.68rem]"
           >
-            <span className="h-px w-9 bg-gold" /> Maison familiale depuis
-            plusieurs générations
+            <span className="h-px w-9 bg-gold" /> Boucherie Tourteaux · Avize
           </div>
           <h1 className="max-w-[700px] font-serif text-[clamp(3.2rem,7vw,4.5rem)] leading-[.98] font-medium tracking-[-.025em] xl:text-[clamp(64px,4.2vw,82px)]">
             <span className="xl:block xl:overflow-hidden xl:pb-[.1em]">
               <span data-hero-line className="xl:block">
-                La tradition du goût
+                Boucherie Tourteaux
               </span>
             </span>{" "}
             <span className="xl:block xl:overflow-hidden xl:pb-[.1em]">
               <span data-hero-line className="xl:block">
-                depuis plusieurs
+                à Avize,
               </span>
             </span>{" "}
             <span className="xl:block xl:overflow-hidden xl:pb-[.1em]">
               <span data-hero-line className="text-gold xl:block">
-                générations.
+                Côte des Blancs.
               </span>
             </span>
           </h1>
@@ -146,8 +132,8 @@ export function HomeExperience({
             data-hero-fade
             className="mt-5 max-w-[540px] text-base leading-[1.6] text-white/80 lg:text-[17px]"
           >
-            Boucherie artisanale à Avize proposant viandes françaises,
-            charcuterie maison et service traiteur.
+            Boucherie à Avize proposant service traiteur, livraison et vente à
+            emporter, à proximité d’Épernay dans la Marne.
           </p>
           <div data-hero-fade className="mt-7 flex flex-wrap gap-3.5">
             <Link
@@ -174,6 +160,12 @@ export function HomeExperience({
           <ArrowDown className="hero-scroll-arrow size-4 text-gold" />
         </a>
       </section>
+      <section className="bg-white py-20 sm:py-28">
+        <Container className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
+          <div><Eyebrow>Une adresse locale</Eyebrow><h2 className="section-title mt-5">Votre boucherie à Avize, au cœur de la Côte des Blancs</h2></div>
+          <div className="space-y-5 text-base leading-8 text-foreground/65"><p>La Boucherie Tourteaux vous accueille au 33 rue Pasteur, 51190 Avize, dans la Marne. Son adresse, au cœur de la Côte des Blancs, est accessible depuis Cramant, Le Mesnil-sur-Oger, Cuis, Grauves, Chouilly et Épernay.</p><p>Vous pouvez venir en boutique pour l’activité de boucherie et la vente à emporter, ou contacter l’équipe pour une demande liée au service traiteur. La livraison est proposée, mais sa zone et ses modalités doivent être confirmées directement selon votre adresse et votre besoin.</p><div className="flex flex-wrap gap-4 pt-3"><Link href="/boucherie-autour-avize" className="text-bordeaux underline underline-offset-4">Voir les communes autour d’Avize</Link><Link href="/contact" className="text-bordeaux underline underline-offset-4">Préparer votre itinéraire</Link></div></div>
+        </Container>
+      </section>
       <section
         id="produits"
         className="overflow-hidden bg-background py-20 sm:py-24 lg:py-28"
@@ -192,8 +184,8 @@ export function HomeExperience({
               </h2>
             </div>
             <p className="max-w-sm text-sm leading-7 text-foreground/60 lg:pb-2">
-              Des produits choisis avec exigence, découpés et préparés chaque
-              jour dans notre maison.
+              Les catégories présentées sur le site donnent un aperçu de la
+              boutique ; les disponibilités sont à vérifier directement.
             </p>
           </div>
           <ProductCarousel products={products} />
@@ -209,7 +201,7 @@ export function HomeExperience({
             <div>
               <Eyebrow>Pourquoi nous choisir</Eyebrow>
               <h2 className="section-title mt-5 max-w-3xl text-white">
-                L’excellence artisanale
+                Le métier de boucher
                 <br className="hidden sm:block" /> à chaque étape.
               </h2>
             </div>
@@ -226,7 +218,7 @@ export function HomeExperience({
               </Link>
             </div>
           </div>
-          <div data-stagger className="mt-4 grid grid-cols-2 lg:grid-cols-6">
+          <div data-stagger className="mt-4 grid grid-cols-2 lg:grid-cols-4">
             {commitments.map(({ icon: Icon, title, text }) => (
               <article
                 key={title}
@@ -263,18 +255,6 @@ export function HomeExperience({
             </Link>
           </div>
           <Gallery />
-        </Container>
-      </section>
-      <section className="bg-white py-20 sm:py-28 lg:py-32">
-        <Container>
-          <div data-reveal className="text-center">
-            <Eyebrow center>Ils nous font confiance</Eyebrow>
-            <h2 className="section-title mx-auto mt-5 max-w-4xl">
-              L’avis de nos clients
-              <br className="hidden sm:block" /> compte pour nous.
-            </h2>
-          </div>
-          <Testimonials />
         </Container>
       </section>
       <section className="relative overflow-hidden bg-gold px-4 py-16 sm:py-20">
