@@ -9,6 +9,7 @@ const actions = [
   },
   { label: "Contact", icon: ShoppingBag, href: "/contact" },
 ];
+const mobileActions = actions.slice(0, 2);
 export function FloatingActions({ phoneHref }: { phoneHref: string }) {
   return (
     <>
@@ -24,22 +25,22 @@ export function FloatingActions({ phoneHref }: { phoneHref: string }) {
             rel="noreferrer"
             className="group flex w-24 flex-col items-center gap-2 border-b border-white/10 px-2 py-4 text-[.56rem] uppercase tracking-[.12em] last:border-0 hover:bg-bordeaux"
           >
-            <Icon
-              className={`size-5 stroke-[1.5] ${label === "WhatsApp" ? "text-emerald-400" : "text-gold"}`}
-            />
+            <Icon className="size-5 stroke-[1.5] text-gold" />
             {label}
           </a>
         ))}
       </aside>
       <nav
         aria-label="Actions rapides mobiles"
-        className="fixed inset-x-3 bottom-3 z-40 flex justify-around rounded-xl border border-white/10 bg-[#111]/92 px-2 py-2 text-white shadow-2xl backdrop-blur-md xl:hidden"
+        className="fixed inset-x-3 bottom-3 z-40 grid grid-cols-2 rounded-xl border border-white/10 bg-[#111]/92 p-2 text-white shadow-2xl backdrop-blur-md xl:hidden"
       >
-        {actions.map(({ label, icon: Icon, href }) => (
+        {mobileActions.map(({ label, icon: Icon, href }) => (
           <a
             key={label}
             href={href === "phone" ? phoneHref : href}
-            className="flex min-w-20 flex-col items-center gap-1 text-[.52rem] uppercase tracking-[.1em]"
+            target={href.startsWith("http") ? "_blank" : undefined}
+            rel={href.startsWith("http") ? "noreferrer" : undefined}
+            className="flex min-h-11 w-full flex-col items-center justify-center gap-1 border-r border-white/10 text-[.52rem] uppercase tracking-[.1em] last:border-r-0"
           >
             <Icon className="size-4 text-gold" />
             {label}
