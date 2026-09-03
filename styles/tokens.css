@@ -1,1 +1,28 @@
-:root { --color-ivory: #faf8f5; --color-bordeaux: #5b0f18; --color-gold: #c8a96a; --color-ink: #222222; --color-white: #ffffff; }
+:root {
+  /* Palette Tourteaux — inspirée du carrelage crème et de l’enseigne noire. */
+  --tourteaux-ivory: #e8ddcc;
+  --tourteaux-cream: #d8c8b5;
+  --tourteaux-blush: #b9a095;
+  --tourteaux-taupe: #756158;
+  --tourteaux-charcoal: #171717;
+  --tourteaux-black: #0d0d0d;
+  --tourteaux-offwhite: #f4efe7;
+  --tourteaux-bronze: #9a805f;
+  --background: var(--tourteaux-offwhite);
+  --surface: var(--tourteaux-ivory);
+  --surface-subtle: var(--tourteaux-ivory);
+  --surface-warm: var(--tourteaux-cream);
+  --surface-dark: var(--tourteaux-charcoal);
+  --surface-black: var(--tourteaux-black);
+  --foreground: var(--tourteaux-charcoal);
+  --foreground-muted: #655c57;
+  --on-dark: var(--tourteaux-offwhite);
+  --on-dark-muted: var(--tourteaux-cream);
+  --accent: var(--tourteaux-taupe);
+  --accent-light: var(--tourteaux-cream);
+  --accent-soft: var(--tourteaux-blush);
+  --detail: var(--tourteaux-bronze);
+  --border: color-mix(in srgb, var(--tourteaux-taupe) 24%, transparent);
+  --border-dark: color-mix(in srgb, var(--tourteaux-charcoal) 24%, transparent);
+  --border-on-dark: color-mix(in srgb, var(--tourteaux-offwhite) 20%, transparent);
+}

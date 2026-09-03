@@ -18,7 +18,7 @@ export function ProductCarousel({ products }: { products: Product[] }) {
         {products.map((p) => (
           <article
             key={p.title}
-            className="group min-w-[78vw] snap-start overflow-hidden rounded-[.75rem] border border-bordeaux/8 bg-white shadow-[0_14px_36px_rgba(51,20,15,.055)] transition duration-500 hover:-translate-y-1 sm:min-w-[310px] lg:min-w-[calc((100%-3.75rem)/4)]"
+            className="group min-w-[78vw] snap-start overflow-hidden rounded-[.75rem] border border-border-dark/8 bg-surface shadow-[0_14px_36px_rgba(23,23,23,.055)] transition duration-500 hover:-translate-y-1 sm:min-w-[310px] lg:min-w-[calc((100%-3.75rem)/4)]"
           >
             <Link href={p.title === "Traiteur" ? "/traiteur" : "/produits"} className="block h-full" aria-label={`Découvrir ${p.title}`}>
             <div className="relative h-64 overflow-hidden">
@@ -32,10 +32,10 @@ export function ProductCarousel({ products }: { products: Product[] }) {
               <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white to-transparent" />
             </div>
             <div className="relative -mt-8 p-7 pt-0">
-              <span className="grid size-11 place-items-center rounded-full bg-bordeaux text-gold shadow-lg">
+              <span className="grid size-11 place-items-center rounded-full bg-surface-dark text-accent-light shadow-lg">
                 <Beef className="size-5 stroke-[1.4]" />
               </span>
-              <h3 className="mt-5 font-serif text-3xl text-bordeaux-dark">
+              <h3 className="mt-5 font-serif text-3xl text-foreground">
                 {p.title}
               </h3>
               <p className="mt-3 text-sm leading-6 text-foreground/56">
