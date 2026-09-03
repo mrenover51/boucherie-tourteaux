@@ -59,7 +59,7 @@ export function Header() {
         <Container
           className={`flex items-center justify-between gap-5 transition-[height] ${scrolled ? "h-[76px]" : "h-[96px]"}`}
         >
-          <Logo light />
+          <Logo light priority />
           <nav className="hidden xl:block" aria-label="Navigation principale">
             <ul className="flex items-center gap-7 2xl:gap-9">
               {navigation.map((i) => (
@@ -114,6 +114,9 @@ export function Header() {
           >
             <Container className="mobile-menu-panel flex h-full flex-col justify-between overflow-y-auto px-5 pt-5 pb-28 sm:px-8 sm:pt-7 sm:pb-32">
               <nav aria-label="Navigation mobile">
+                <div className="mb-4 border-b border-on-dark/10 pb-5">
+                  <Logo light />
+                </div>
                 <ul>
                   {navigation.map((i) => (
                     <li key={i.href} className="mobile-menu-item">

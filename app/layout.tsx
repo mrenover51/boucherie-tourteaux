@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#F4EFE7", colorScheme: "light dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const localBusiness = { "@context": "https://schema.org", "@type": "Store", "@id": businessId, name: siteConfig.name, description: siteConfig.description, telephone: "+33326517371", email: siteConfig.email, url: siteConfig.url, address: postalAddress, openingHoursSpecification };
+  const localBusiness = { "@context": "https://schema.org", "@type": "Store", "@id": businessId, name: siteConfig.name, description: siteConfig.description, telephone: "+33326517371", email: siteConfig.email, url: siteConfig.url, logo: `${siteConfig.url}/images/logo.png`, address: postalAddress, openingHoursSpecification };
   const website = { "@context": "https://schema.org", "@type": "WebSite", "@id": `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, inLanguage: "fr-FR", publisher: { "@id": businessId } };
   const jsonLd = safeJsonLd([localBusiness, website]);
   return <html lang="fr" className={`${serif.variable} ${sans.variable}`} suppressHydrationWarning><body><a href="#contenu" className="skip-link">Aller au contenu</a><SmoothScroll/><Header/><main id="contenu" className="min-h-[60vh]">{children}</main><Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }}/></body></html>;
