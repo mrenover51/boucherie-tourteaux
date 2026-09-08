@@ -191,8 +191,9 @@ export function HomeExperience({
           <ProductCarousel products={products} />
         </Container>
       </section>
-      <section className="relative overflow-hidden bg-surface-black py-20 text-on-dark sm:py-24 lg:py-28">
-        <div className="absolute top-0 right-0 size-[38rem] rounded-full bg-surface-dark/20 blur-[140px]" />
+      <section className="relative overflow-hidden bg-[#3b302c] py-20 text-on-dark sm:py-24 lg:py-28">
+        <div className="absolute -top-24 right-[-8rem] size-[42rem] rounded-full bg-accent-soft/24 blur-[140px]" />
+        <div className="absolute -bottom-48 left-[-10rem] size-[34rem] rounded-full bg-detail/12 blur-[130px]" />
         <Container className="relative">
           <div
             data-reveal
@@ -206,7 +207,7 @@ export function HomeExperience({
               </h2>
             </div>
             <div>
-              <p className="text-sm leading-7 text-on-dark/58">
+              <p className="text-sm leading-7 text-on-dark/76">
                 De la sélection jusqu’à votre table, nous cultivons une même
                 exigence : vous offrir le goût juste.
               </p>
@@ -228,7 +229,7 @@ export function HomeExperience({
                 <h3 className="mt-7 font-serif text-xl leading-tight sm:text-2xl">
                   {title}
                 </h3>
-                <p className="mt-3 text-xs leading-5 text-on-dark/48">{text}</p>
+                <p className="mt-3 text-xs leading-5 text-on-dark/68">{text}</p>
               </article>
             ))}
           </div>

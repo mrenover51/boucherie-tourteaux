@@ -13,6 +13,18 @@ export function Footer() {
       <div><FooterTitle>Nous trouver</FooterTitle><div className="mt-6 overflow-hidden rounded-lg border border-on-dark/10"><iframe title="Carte de la Boucherie Tourteaux" src="https://www.google.com/maps?q=33%20rue%20Pasteur%2051190%20Avize&output=embed" className="h-52 w-full border-0" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/></div></div>
     </div>
     <div className="flex flex-col gap-5 pt-7 text-[.58rem] uppercase tracking-[.12em] text-on-dark/45 lg:flex-row lg:items-center lg:justify-between"><p>© {new Date().getFullYear()} Boucherie Tourteaux. Tous droits réservés.</p><div className="flex flex-wrap gap-5"><Link href="/contact">Mentions légales</Link><Link href="/contact">Confidentialité</Link><Link href="/sitemap.xml">Plan du site</Link><Link href="/contact">FAQ</Link></div><a href="#contenu" className="flex items-center gap-2 text-accent-light">Retour en haut <span className="grid size-9 place-items-center rounded-full border border-accent/40"><ArrowUp className="size-4"/></span></a></div>
+    <p className="mt-8 border-t border-on-dark/10 pt-6 text-center text-[.62rem] tracking-[.08em] text-on-dark/40">
+      Site créé par{" "}
+      <a
+        href="https://mrdstudio.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visiter le site de MRD Studio (nouvel onglet)"
+        className="text-on-dark/60 underline decoration-on-dark/20 underline-offset-4 transition-colors duration-300 hover:text-accent-light hover:decoration-accent-light focus-visible:text-accent-light"
+      >
+        MRD Studio
+      </a>
+    </p>
   </Container></footer>;
 }
 function FooterTitle({children}:{children:React.ReactNode}) { return <p className="text-[.62rem] font-bold uppercase tracking-[.18em] text-accent-light">{children}</p>; }
