@@ -11,6 +11,11 @@
 }
 :root { --ease-premium: cubic-bezier(.22, 1, .36, 1); }
 .dark { --background: var(--surface-dark); --foreground: var(--on-dark); }
+/* Tailwind 4 emits the opacity modifiers for these semantic colors but omits
+   their unmodified utilities. Keep the two base utilities explicit so links
+   and buttons do not fall back to an inherited color. */
+.text-on-dark { color: var(--on-dark); }
+.text-foreground { color: var(--foreground); }
 * { box-sizing: border-box; }
 html, body { max-width: 100%; overflow-x: clip; }
 html { scroll-behavior: smooth; }

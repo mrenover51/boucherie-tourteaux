@@ -11,6 +11,18 @@ const images = [
   { src: "/images/hero.png", width: 1536, height: 1024, alt: "Intérieur et étal de la Boucherie Tourteaux à Avize", caption: "La boutique", kind: "wide" },
   { src: "/images/logo mur.png", width: 1448, height: 1086, alt: "Enseigne intérieure Boucherie Tourteaux à Avize", caption: "L’identité", kind: "wide" },
   { src: "/images/etalage 1.png", width: 1448, height: 1086, alt: "Étal de la Boucherie Tourteaux à Avize", caption: "L’étal", kind: "wide" },
+  { src: "/images/photo-equipe.png", width: 1448, height: 1086, alt: "L'équipe de la Boucherie Tourteaux à Avize", caption: "L’équipe", kind: "wide", category: "La maison" },
+  { src: "/images/prepa-pate1.png", width: 1448, height: 1086, alt: "Préparation artisanale à la Boucherie Tourteaux à Avize", caption: "La préparation", kind: "wide", category: "Savoir-faire" },
+  { src: "/images/prepa-pate2.png", width: 1086, height: 1448, alt: "Geste de préparation artisanale à la Boucherie Tourteaux", caption: "Le geste", kind: "portrait", category: "Savoir-faire" },
+  { src: "/images/four-terrine.png", width: 1086, height: 1448, alt: "Préparations artisanales en cuisson à la Boucherie Tourteaux", caption: "La cuisson", kind: "portrait", category: "Savoir-faire" },
+  { src: "/images/charcuterie-fromage.png", width: 1652, height: 952, alt: "Plateau de charcuterie et fromages de la Boucherie Tourteaux à Avize", caption: "Charcuterie & fromages", kind: "wide", category: "Réceptions & plateaux" },
+  { src: "/images/planche-fromage.png", width: 1672, height: 941, alt: "Planche de fromages préparée par la Boucherie Tourteaux à Avize", caption: "Planche de fromages", kind: "wide", category: "Réceptions & plateaux" },
+  { src: "/images/paella.png", width: 939, height: 1674, alt: "Paella préparée par la Boucherie Tourteaux à Avize", caption: "Plat préparé", kind: "portrait", category: "Traiteur" },
+  { src: "/images/petit-four.png", width: 991, height: 1588, alt: "Assortiment de petits fours de la Boucherie Tourteaux à Avize", caption: "Petits fours", kind: "portrait", category: "Réceptions & plateaux" },
+  { src: "/images/poisson1.png", width: 1870, height: 841, alt: "Présentation traiteur autour du poisson", caption: "Préparation traiteur", kind: "wide", category: "Traiteur" },
+  { src: "/images/poisson2.png", width: 1653, height: 951, alt: "Présentation de poisson préparée pour une réception", caption: "Pour la table", kind: "wide", category: "Traiteur" },
+  { src: "/images/poisson3.png", width: 1078, height: 1459, alt: "Préparation de poisson dressée pour le service traiteur", caption: "Le dressage", kind: "portrait", category: "Traiteur" },
+  { src: "/images/saumon.png", width: 1652, height: 952, alt: "Préparation traiteur à base de saumon", caption: "Préparation au saumon", kind: "wide", category: "Traiteur" },
   { src: "/images/Boucher 1.png", width: 1086, height: 1448, alt: "Découpe artisanale à la Boucherie Tourteaux à Avize", caption: "Le geste", kind: "portrait" },
   { src: "/images/rayon 4.png", width: 1448, height: 1086, alt: "Rayon de viandes à la Boucherie Tourteaux à Avize", caption: "Boucherie", kind: "wide" },
   { src: "/images/rayon 5.png", width: 1448, height: 1086, alt: "Sélection de viandes et volailles à la Boucherie Tourteaux à Avize", caption: "La sélection", kind: "wide" },
@@ -81,7 +93,7 @@ export function GalleryExperience() {
               >
                 <Image src={image.src} alt={image.alt} width={image.width} height={image.height} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" loading="lazy" className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.035]" />
                 <span className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent opacity-70 transition-opacity group-hover:opacity-90" />
-                <span className="absolute right-5 bottom-5 left-5 flex items-end justify-between text-on-dark"><span className="font-serif text-3xl">{image.caption}</span><span className="flex size-10 translate-y-2 items-center justify-center rounded-full bg-surface text-foreground opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"><Expand className="size-4" /></span></span>
+                <span className="absolute right-5 bottom-5 left-5 flex items-end justify-between text-on-dark"><span><span className="mb-2 block text-[.58rem] font-semibold uppercase tracking-[.18em] text-accent-light">{"category" in image ? image.category : "La maison"}</span><span className="block font-serif text-3xl">{image.caption}</span></span><span className="flex size-10 translate-y-2 items-center justify-center rounded-full bg-surface text-foreground opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"><Expand className="size-4" /></span></span>
               </motion.button>
             ))}
           </div>
@@ -105,4 +117,3 @@ export function GalleryExperience() {
     </>
   );
 }
-

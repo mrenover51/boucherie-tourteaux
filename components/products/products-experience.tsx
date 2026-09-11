@@ -25,15 +25,16 @@ const products: Product[] = [
   { id: "boeuf", title: "Bœuf", group: "Viandes", image: "/images/rayon 6.png", imagePosition: "object-center", index: "01", introduction: "Une sélection de pièces de bœuf proposée à la coupe.", note: "Pièces, origines et disponibilités à demander en boutique." },
   { id: "viandes", title: "Viandes", group: "Viandes", image: "/images/rayon 5.png", index: "02", introduction: "Différentes familles de viandes présentées au comptoir.", note: "La sélection et les disponibilités évoluent en boutique." },
   { id: "boucherie", title: "Boucherie", group: "Viandes", image: "/images/rayon 4.png", index: "03", introduction: "Un aperçu du rayon boucherie et de ses différentes pièces.", note: "Découpes et disponibilités à confirmer auprès de l’équipe." },
-  { id: "charcuterie", title: "Charcuterie", group: "Charcuterie", image: "/images/rayon 7.png", imagePosition: "object-center", index: "04", introduction: "La sélection de charcuteries présentée au comptoir.", note: "La gamme détaillée est à découvrir directement en boutique." },
-  { id: "charcuterie-seche", title: "Charcuterie sèche", group: "Charcuterie", image: "/images/rayon 10.png", index: "05", introduction: "Une autre facette de la sélection de charcuteries de la boutique.", note: "Produits et disponibilités à vérifier sur place." },
-  { id: "traiteur", title: "Traiteur", group: "Traiteur", image: "/images/rayon 1.png", index: "06", introduction: "Des propositions traiteur à découvrir directement en boutique.", note: "La sélection évolue : renseignez-vous sur les propositions du jour." },
-  { id: "plats-prepares", title: "Plats préparés", group: "Traiteur", image: "/images/rayon 2.png", index: "07", introduction: "Un aperçu du rayon des préparations proposées au comptoir.", note: "La composition et la disponibilité sont communiquées en boutique." },
-  { id: "preparations", title: "Préparations", group: "Maison", image: "/images/rayon 3.png", index: "08", introduction: "Des préparations à découvrir selon la sélection du moment.", note: "Composition et allergènes disponibles auprès de l’équipe." },
-  { id: "miel", title: "Miel", group: "Épicerie", image: "/images/rayon 8.png", index: "09", introduction: "Une sélection de miel présentée dans l’espace épicerie.", note: "Références et disponibilités à vérifier en boutique." },
-  { id: "fromages", title: "Fromages", group: "Épicerie", image: "/images/rayon 9.png", index: "10", introduction: "Une sélection de fromages complète les rayons de la boutique.", note: "La sélection peut évoluer selon les disponibilités." },
-  { id: "conserves-boissons", title: "Conserves & boissons", group: "Épicerie", image: "/images/rayon 11.png", index: "11", introduction: "Des produits d’épicerie et boissons sont présentés en boutique.", note: "Les références visibles sont données à titre illustratif." },
-  { id: "accompagnements", title: "Accompagnements", group: "Épicerie", image: "/images/rayon 12.png", index: "12", introduction: "Une sélection d’épicerie accompagne l’offre principale de la maison.", note: "Les références et compositions sont à consulter en boutique." },
+  { id: "volaille", title: "Volaille", group: "Volaille", image: "/images/produit-volaille.webp", imagePosition: "object-center", index: "04", introduction: "Des volailles sélectionnées et préparées avec soin en boutique, pour vos repas du quotidien comme pour vos recettes plus généreuses.", note: "Découpe et conseils disponibles directement auprès de l’équipe selon les arrivages et vos besoins. La sélection peut évoluer selon les disponibilités." },
+  { id: "charcuterie", title: "Charcuterie", group: "Charcuterie", image: "/images/rayon 7.png", imagePosition: "object-center", index: "05", introduction: "La sélection de charcuteries présentée au comptoir.", note: "La gamme détaillée est à découvrir directement en boutique." },
+  { id: "charcuterie-seche", title: "Charcuterie sèche", group: "Charcuterie", image: "/images/rayon 10.png", index: "06", introduction: "Une autre facette de la sélection de charcuteries de la boutique.", note: "Produits et disponibilités à vérifier sur place." },
+  { id: "traiteur", title: "Traiteur", group: "Traiteur", image: "/images/rayon 1.png", index: "07", introduction: "Des propositions traiteur à découvrir directement en boutique.", note: "La sélection évolue : renseignez-vous sur les propositions du jour." },
+  { id: "plats-prepares", title: "Plats préparés", group: "Traiteur", image: "/images/rayon 2.png", index: "08", introduction: "Un aperçu du rayon des préparations proposées au comptoir.", note: "La composition et la disponibilité sont communiquées en boutique." },
+  { id: "preparations", title: "Préparations", group: "Maison", image: "/images/rayon 3.png", index: "09", introduction: "Des préparations à découvrir selon la sélection du moment.", note: "Composition et allergènes disponibles auprès de l’équipe." },
+  { id: "miel", title: "Miel", group: "Épicerie", image: "/images/rayon 8.png", index: "10", introduction: "Une sélection de miel présentée dans l’espace épicerie.", note: "Références et disponibilités à vérifier en boutique." },
+  { id: "fromages", title: "Fromages", group: "Épicerie", image: "/images/rayon 9.png", index: "11", introduction: "Une sélection de fromages complète les rayons de la boutique.", note: "La sélection peut évoluer selon les disponibilités." },
+  { id: "conserves-boissons", title: "Conserves & boissons", group: "Épicerie", image: "/images/rayon 11.png", index: "12", introduction: "Des produits d’épicerie et boissons sont présentés en boutique.", note: "Les références visibles sont données à titre illustratif." },
+  { id: "accompagnements", title: "Accompagnements", group: "Épicerie", image: "/images/rayon 12.png", index: "13", introduction: "Une sélection d’épicerie accompagne l’offre principale de la maison.", note: "Les références et compositions sont à consulter en boutique." },
 ];
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -148,7 +149,7 @@ function ProductSheet({ product, onClose, closeButton, phoneHref }: { product: P
             <p className="flex items-center gap-3"><Check className="size-4 text-accent" /> Conseils disponibles en boutique</p>
             <p className="flex items-center gap-3"><Info className="size-4 text-accent" /> {product.note}</p>
           </div>
-          <div className="mt-auto flex flex-wrap gap-3 pt-10">
+          <div className="mt-auto flex flex-wrap items-stretch gap-3 pt-10">
             <Button href={phoneHref} className="group"><Phone className="size-4 transition-transform group-hover:rotate-12" />Appeler</Button>
             <Button href="/contact" variant="outline"><ShoppingBag className="size-4" />Venir en boutique</Button>
           </div>

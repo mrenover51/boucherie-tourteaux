@@ -62,18 +62,28 @@ export function BoucherieExperience({ phone, phoneHref }: { phone: string; phone
       <section className="bg-surface-dark py-24 text-on-dark sm:py-32 lg:py-40">
         <Container>
           <div data-reveal className="grid gap-10 lg:grid-cols-2 lg:items-end">
-            <div><Eyebrow light>Notre équipe</Eyebrow><h2 className="mt-7 font-serif text-5xl leading-[.92] tracking-[-.035em] sm:text-7xl">Des femmes et des hommes derrière le comptoir.</h2></div>
-            <div className="lg:justify-self-end lg:max-w-md"><UsersRound className="size-9 stroke-1 text-accent-light" /><p className="mt-6 leading-7 text-on-dark/65">Les portraits, fonctions et parcours seront ajoutés après une séance photo réalisée avec l’équipe réelle de la Boucherie Tourteaux.</p></div>
+            <div><Eyebrow light>Notre équipe</Eyebrow><h2 className="mt-7 font-serif text-5xl leading-[.92] tracking-[-.035em] sm:text-7xl">Des bouchers passionnés au service de leurs clients.</h2></div>
+            <div className="lg:justify-self-end lg:max-w-md"><UsersRound className="size-9 stroke-1 text-accent-light" /><p className="mt-6 leading-7 text-on-dark/65">Une équipe présente en boutique pour préparer, échanger et accompagner chaque demande.</p></div>
           </div>
-          <div data-reveal className="photo-glow relative mt-16 aspect-[16/6] min-h-72 overflow-hidden border border-on-dark/15">
-            <Image src="/images/etalage 1.png" alt="Étal et intérieur de la Boucherie Tourteaux à Avize" fill sizes="(max-width: 1024px) 100vw, 1200px" className="object-cover object-center" />
+          <div data-reveal className="photo-glow relative mx-auto mt-16 w-[92%] max-w-[1120px] overflow-hidden border border-on-dark/15 sm:w-[88%] lg:w-[78%]">
+            <Image src="/images/photo-equipe.png" alt="L'équipe de la Boucherie Tourteaux à Avize" width={1448} height={1086} sizes="(max-width: 1024px) 100vw, 1400px" loading="lazy" className="h-auto w-full" />
           </div>
         </Container>
       </section>
 
       <section className="bg-surface py-24 sm:py-32 lg:py-44">
         <Container className="grid gap-14 lg:grid-cols-2 lg:items-center lg:gap-24">
-          <div data-image-reveal className="photo-glow relative aspect-[4/5] overflow-hidden"><Image src="/images/Boucher 1.png" alt="Découpe artisanale à la Boucherie Tourteaux à Avize" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center transition-transform duration-1000 hover:scale-[1.025]" /></div>
+          <div data-image-reveal className="grid grid-cols-2 gap-3 sm:gap-4">
+            <figure className="photo-glow relative col-span-2 overflow-hidden">
+              <Image src="/images/prepa-pate1.png" alt="Préparation artisanale à la Boucherie Tourteaux à Avize" width={1448} height={1086} sizes="(max-width: 1024px) 100vw, 50vw" loading="lazy" className="h-auto w-full" />
+            </figure>
+            <figure className="photo-glow relative overflow-hidden">
+              <Image src="/images/prepa-pate2.png" alt="Geste de préparation artisanale à la Boucherie Tourteaux" width={1086} height={1448} sizes="(max-width: 640px) 50vw, 25vw" loading="lazy" className="h-auto w-full" />
+            </figure>
+            <figure className="photo-glow relative overflow-hidden">
+              <Image src="/images/four-terrine.png" alt="Préparations artisanales en cuisson à la Boucherie Tourteaux" width={1086} height={1448} sizes="(max-width: 640px) 50vw, 25vw" loading="lazy" className="h-auto w-full" />
+            </figure>
+          </div>
           <div data-reveal className="lg:py-12"><Eyebrow>Notre savoir-faire</Eyebrow><h2 className="mt-7 font-serif text-5xl leading-[.92] tracking-[-.035em] sm:text-7xl">La précision du geste.</h2><p className="mt-8 max-w-lg leading-8 text-foreground/60">Découpe, préparation et conseil forment le quotidien du métier. Chaque demande commence par un échange en boutique.</p>
             <div className="mt-12 grid gap-8 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">{craft.map(({ icon: Icon, title, text }) => <article key={title} className="group border-t border-border-dark/15 pt-6"><Icon className="size-6 stroke-[1.3] text-accent transition-transform group-hover:-translate-y-1" /><h3 className="mt-8 font-serif text-2xl">{title}</h3><p className="mt-3 text-xs leading-6 text-foreground/50">{text}</p></article>)}</div>
           </div>

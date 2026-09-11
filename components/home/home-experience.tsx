@@ -13,6 +13,7 @@ import { Container } from "@/components/ui/container";
 import { FloatingActions } from "@/components/layout/floating-actions";
 import { ProductCarousel } from "@/components/sections/product-carousel";
 import { Gallery } from "@/components/sections/gallery";
+import { CraftVideo } from "@/components/home/craft-video";
 
 const products = [
   {
@@ -195,29 +196,25 @@ export function HomeExperience({
         <div className="absolute -top-24 right-[-8rem] size-[42rem] rounded-full bg-accent-soft/24 blur-[140px]" />
         <div className="absolute -bottom-48 left-[-10rem] size-[34rem] rounded-full bg-detail/12 blur-[130px]" />
         <Container className="relative">
-          <div
-            data-reveal
-            className="grid gap-8 border-b border-on-dark/12 pb-12 lg:grid-cols-[1.1fr_.55fr] lg:items-end"
-          >
-            <div>
-              <Eyebrow light>Pourquoi nous choisir</Eyebrow>
+          <div className="grid gap-14 border-b border-on-dark/12 pb-16 md:gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(320px,.62fr)] lg:items-center lg:gap-16 xl:gap-24">
+            <div data-reveal className="max-w-3xl lg:py-10">
+              <Eyebrow light>Sur le terrain</Eyebrow>
               <h2 className="section-title mt-5 max-w-3xl text-on-dark">
-                Le métier de boucher
+                Le métier de boucher,
                 <br className="hidden sm:block" /> à chaque étape.
               </h2>
-            </div>
-            <div>
-              <p className="text-sm leading-7 text-on-dark/76">
-                De la sélection jusqu’à votre table, nous cultivons une même
-                exigence : vous offrir le goût juste.
+              <p className="mt-7 max-w-xl text-base leading-8 text-on-dark/76">
+                En boutique, le geste, la préparation et le conseil donnent vie
+                à un savoir-faire artisanal, au plus près de chaque client.
               </p>
               <Link
                 href="/boucherie"
-                className="mt-7 inline-flex items-center gap-3 border-b border-accent pb-2 text-[.65rem] font-bold tracking-[.16em] text-accent-light"
+                className="mt-8 inline-flex items-center gap-3 border-b border-accent pb-2 text-[.65rem] font-bold tracking-[.16em] text-accent-light"
               >
                 DÉCOUVRIR NOS ENGAGEMENTS <ArrowRight className="size-4" />
               </Link>
             </div>
+            <CraftVideo />
           </div>
           <div data-stagger className="mt-4 grid grid-cols-2 lg:grid-cols-4">
             {commitments.map(({ icon: Icon, title, text }) => (
