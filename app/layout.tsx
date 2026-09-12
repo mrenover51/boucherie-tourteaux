@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description: siteConfig.description, applicationName: siteConfig.name,
   openGraph: { title: "Boucherie à Avize | Boucherie Tourteaux", description: siteConfig.description, url: "/", siteName: siteConfig.name, locale: "fr_FR", type: "website" },
   twitter: { card: "summary_large_image", title: "Boucherie à Avize | Boucherie Tourteaux", description: siteConfig.description },
+  verification: {
+    google: "k8HPrFwFBmQHhC8wM5-jSx7wbyPAw4nYwIChFyHRHTU",
+  },
 };
 export const viewport: Viewport = { themeColor: "#F4EFE7", colorScheme: "light dark" };
 
