@@ -102,12 +102,12 @@ export function GalleryExperience() {
 
       <AnimatePresence>
         {active !== null && (
-          <motion.div role="dialog" aria-modal="true" aria-label={`Image ${active + 1} sur ${images.length}`} className="fixed inset-0 z-[90] flex items-center justify-center bg-surface-black/95 p-4 sm:p-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-            <button type="button" className="absolute inset-0" onClick={() => setActive(null)} aria-label="Fermer la galerie" />
+          <motion.div role="dialog" aria-modal="true" aria-label={`Image ${active + 1} sur ${images.length}`} className="fixed inset-0 z-[90] flex items-center justify-center p-4 sm:p-10">
+            <motion.button type="button" className="absolute inset-0 bg-surface-black/95" onClick={() => setActive(null)} aria-label="Fermer la galerie" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
             <button ref={closeButton} type="button" onClick={() => setActive(null)} aria-label="Fermer" className="absolute top-5 right-5 z-20 flex size-12 items-center justify-center rounded-full border border-on-dark/25 text-on-dark transition hover:rotate-90 hover:bg-surface hover:text-foreground"><X className="size-5" /></button>
             <button type="button" onClick={() => move(-1)} aria-label="Image précédente" className="absolute bottom-6 left-5 z-20 flex size-12 items-center justify-center rounded-full border border-on-dark/25 text-on-dark transition hover:bg-surface hover:text-foreground sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2"><ChevronLeft className="size-5" /></button>
             <motion.figure key={images[active].src} initial={reduceMotion ? false : { opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .4, ease }} className="relative z-10 flex max-h-[84vh] max-w-6xl flex-col items-center">
-              <Image src={images[active].src} alt={images[active].alt} width={images[active].width} height={images[active].height} sizes="(max-width: 1200px) 90vw, 1152px" className="max-h-[76vh] w-auto max-w-full object-contain" />
+              <Image src={images[active].src} alt={images[active].alt} width={images[active].width} height={images[active].height} sizes="(max-width: 1200px) 90vw, 1152px" className="max-h-[76vh] w-auto max-w-full object-contain opacity-100 filter-none" />
               <figcaption className="mt-5 text-center"><span className="font-serif text-2xl text-on-dark">{images[active].caption}</span><span className="ml-4 text-[.65rem] tracking-[.18em] text-accent-light">{String(active + 1).padStart(2, "0")} / {images.length}</span></figcaption>
             </motion.figure>
             <button type="button" onClick={() => move(1)} aria-label="Image suivante" className="absolute right-5 bottom-6 z-20 flex size-12 items-center justify-center rounded-full border border-on-dark/25 text-on-dark transition hover:bg-surface hover:text-foreground sm:top-1/2 sm:bottom-auto sm:-translate-y-1/2"><ChevronRight className="size-5" /></button>
