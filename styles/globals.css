@@ -147,3 +147,18 @@ html[data-motion="reduced"] [data-reveal],html[data-motion="reduced"] [data-stag
   .section-title { font-size: clamp(2.7rem,13vw,3.7rem); line-height: .94; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+/* Noël 2026 — couleurs explicites pour conserver la luminosité dans les deux thèmes. */
+.christmas-page { background: #110e11; color: #fff7e8; }
+.christmas-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: .5rem; border: 1px solid #d7b76b; padding: .7rem 1rem; color: #f6dfa7; background: #290e18; font-size: .875rem; font-weight: 600; text-align: center; transition: background-color .2s; }
+.christmas-button:hover { background: #4b1d2d; }
+.christmas-button:disabled { opacity: .45; cursor: default; }
+.christmas-page :focus-visible, .christmas-dialog :focus-visible { outline: 3px solid #ffe4a1; outline-offset: 4px; }
+.christmas-category { border: 1px solid #d7b76b55; background: #180f14; }
+.christmas-dialog { position: fixed; inset: 0; width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; padding: 0; border: 0; background: #110e11; color: #fff7e8; overflow: hidden; }
+.christmas-dialog[open] { display: flex; flex-direction: column; }
+.christmas-dialog::backdrop { background: #110e11; }
+.christmas-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .75rem; border-bottom: 1px solid #d7b76b55; }
+.christmas-toolbar .christmas-button { padding: .5rem .65rem; }
+.christmas-menu-viewport { flex: 1; min-height: 0; overflow: auto; overscroll-behavior: contain; touch-action: pan-x pan-y pinch-zoom; padding: .5rem; }
+.christmas-enlarged-menu { display: block; width: 100%; height: auto; max-width: none; margin: 0 auto; }
+.nav-link.christmas-nav { color: #e3c783; }

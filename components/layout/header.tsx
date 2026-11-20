@@ -61,13 +61,13 @@ export function Header() {
         >
           <Logo light priority />
           <nav className="hidden xl:block" aria-label="Navigation principale">
-            <ul className="flex items-center gap-7 2xl:gap-9">
+            <ul className="flex items-center gap-4 2xl:gap-6">
               {navigation.map((i) => (
                 <li key={i.href}>
                   <Link
                     href={i.href}
                     aria-current={pathname === i.href ? "page" : undefined}
-                    className={`nav-link ${pathname === i.href ? "active" : ""}`}
+                    className={`nav-link ${i.href === "/noel-2026" ? "christmas-nav" : ""} ${pathname === i.href ? "active" : ""}`}
                   >
                     {i.label}
                   </Link>

@@ -1,3 +1,4 @@
+import { ChristmasPromotion } from "@/components/noel/christmas-promotion";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -161,6 +162,7 @@ export function HomeExperience({
           <ArrowDown className="hero-scroll-arrow size-4 text-accent-light" />
         </a>
       </section>
+      <ChristmasPromotion />
       <section className="bg-surface py-20 sm:py-28">
         <Container className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-24">
           <div><Eyebrow>Une adresse locale</Eyebrow><h2 className="section-title mt-5">Votre boucherie à Avize, au cœur de la Côte des Blancs</h2></div>
